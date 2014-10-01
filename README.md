@@ -1,7 +1,7 @@
 Tools & Tests: A Python Quest
 =============================
 
-A Half-Day Workshop for Python Beginner to Intermediate Level
+A Half-Day (hopefully!) Workshop for Python Beginner to Intermediate Level
 
 
 Is This For Me?
@@ -95,7 +95,39 @@ in place:
 * Have Python installed (recommended versions 2.7, 3.3, or 3.4)
 
 
-### Install Package Management Tools
+###### Tip for Windows Users
+
+Sometimes it's not easy being a Windows user in an open source world.
+To make it a little easier to get by, try out the
+[Chocolatey package manager](https://chocolatey.org/)!
+Chocolatey provides a convenient command line installer for free software
+devoid of bloatware barnacles! While not as extensively stocked as
+Linux-based software repositories, it's a huge improvement over tedious GUI
+install wizards which require you to manually download and run each installer
+individually. For purposes of preparing for this workshop, it can save
+you a lot of time.
+
+With Chocolatey, here are some of the things you could install:
+
+```
+choco install python2
+choco install python3
+choco install 7zip
+choco install git
+choco install gitextensions
+choco install GitHub
+choco install notepadplusplus
+choco install SublimeText3
+choco install KickAssVim
+choco install vim
+choco install Emacs
+```
+
+The above are only examples; Windows users should window-shop for packages
+on the (chocolatey repository](https://chocolatey.org/packages)
+
+
+#### Install Package Management Tools
 
 These need to be installed in your Python executable environment,
 whether you're using a pre-installed system Python, or a special
@@ -111,8 +143,7 @@ Here's a nice set of ["all in one instructions"](https://packaging.python.org/en
 - [ ] Install wheel
 
 
-Set Up Python Sandbox Using Virtualenv
-++++++++++++++++++++++++++++++++++++++
+#### Set Up Python Sandbox Using Virtualenv
 
 - [ ] Create a folder to store your virtualenv subfolders 
 - [ ] Create a virtualenv called "questdev"
@@ -125,8 +156,7 @@ Links for Learning virtualenv:
     * [A non-magical introduction to Pip and Virtualenv for Python beginners](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-Create Project Folder
-+++++++++++++++++++++
+#### Create Project Folder
 
 - [ ] Create a folder somewhere called shiny_code_quest
 - [ ] Populate the folder with a basic Python project skeleton
@@ -144,31 +174,60 @@ Most things from PyPI are pretty easy to install..."pip install whatever".
 But sometimes you may run across something that needs a compiler, or has
 a broken dependency, etc.
 
+See also:
+    Funniest: http://www.scotttorborg.com/python-packaging/everything.html
+    https://pythonhosted.org/an_example_pypi_project/index.html
+    http://peterdowns.com/posts/first-time-with-pypi.html
+    https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/
 
-Add Source Code to the Project
-++++++++++++++++++++++++++++++
+If you get stuck on this, download the sample skeleton and use that
+instead. TODO
+
+#### Set Up Git
+
+GitHub has [nice docs for setting up Git](https://help.github.com/articles/set-up-git) on how to set up Git.
+
+- [ ] Install Git for your platform
+- [ ] Configure global Git settings
+- [ ] Make your project folder into a Git repository
+    - [ ] cd into your shiny_code_quest folder
+    - [ ] type "git init"
+
+
+#### Add Source Code to the Project
 
 - [ ] Download the grubby_grail.tar.gz file TODO add URI
 - [ ] Decompress grubby_grail using "tar -xvf grubby_grail.tar.gz"
 - [ ] Populate the 
 
 
-Make It Run
-+++++++++++
+#### Make It Run
 
-- [ ] 
-This source code has some depe
+- [ ] create a console script entry in setup.py to execute
+      the script 
 
-Add Tests
-+++++++++
+```python
+entry_points={
+  'console_scripts': [
+      'approach_the_keeper = shiny.scripts:approach_the_keeper',
+      ]}
+```
 
-TODO
+- [ ] run the console script: approach_the_keeper
+
+
+#### Add Tests
+
+A few sample tests are included to help you get started.
+You'll need to make a few more to achieve 100% test coverage.
+
+- [ ] Run the tests
+- [ ] Fix the failing tests
 - [ ] Run coverage report to find the missing test coverage
+- [ ] Add the missing tests
 
 
-
-Improve Coding Style
-++++++++++++++++++++
+#### Improve Coding Style
 
 - [ ] install PEP8 code checker
 - [ ] run PEP8 checker
@@ -176,9 +235,69 @@ Improve Coding Style
 TODO other code checkers, flake8 etc.
 
 
-Publish a Release on the Test Packaging Server
-++++++++++++++++++++++++++++++++++++++++++++++
+#### Setup Sphinx for Documentation
+
+- [ ] Create Sphinx project skeleton using [sphinx-quickstart](http://sphinx-doc.org/tutorial.html#setting-up-the-documentation-sources)
+- [ ] Modify docs/conf.py and makefile with appropriate settings (TODO)
+- [ ] Generate HTML docs by [running the Sphinx build](http://sphinx-doc.org/tutorial.html#running-the-build)
+- [ ] Open generated index.html to behold rendered docs
+
+
+#### Write Docs
+
+- [ ] Add missing docstrings marked with "TODO"
+- [ ] Fill in index.rst with some explanatory text.
+- [ ] Create an api_doc.rst, add it to index.rst toctree
+- [ ] Create a narrative.rst, add it to the index.rst toctree
+
+
+#### Commit and Push Changes
+
+You mean you haven't been doing commits this whole time? Better get
+caught up with that!
+
+- [ ] [Commit all the things!!!](http://i.stack.imgur.com/BxolD.jpg)
+      With helpful comments.
+- [ ] Create a repo on GitHub, BitBucket or similar. One option is to fork
+      [shiny_code_quest](https://github.com/sheilatron/shiny_code_quest)
+- [ ] Add your remote Git repo as a git "remote"
+`git remote add origin <your repo uri>
+- [ ] Push the changes to the repo.
+
+
+#### Test Installation
+
+- [ ] Create distributions for common formats (take your pick)
+    - [ ] wheel
+    - [ ] sdist
+    - [ ] msi
+    - [ ] egg
+
+Examples:
+```
+python setup.py sdist
+python setup.py bdist_msi
+python setup.py bdist_egg
+```
+See also [docs on creating built distributions](https://docs.python.org/2/distutils/builtdist.html)
+
+- [ ] Open a new console shell window
+- [ ] Create a new virtualenv called "questtest"
+- [ ] Activate questtest
+- [ ] Navigate to the directory where you created the distribution
+      (usually the 'dist' directory of your project folder)
+- [ ] Install the package using "questtest" Python interpreter
+- [ ] Validate that the command line script works "approach_the_keeper"
+
+
+
+#### Publish a Release on the Test Packaging Server
+
+- [ ] Publish the package using twine to the test package server
 
 https://wiki.python.org/moin/TestPyPI
 https://testpypi.python.org/pypi
+
+- [ ] Create another virtualenv, and attempt to install from the
+      test package server
 
