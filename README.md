@@ -85,8 +85,7 @@ links on the web.
 Tasks Checklist
 ---------------
 
-Prerequisites
-+++++++++++++
+#### Prerequisites
 
 Prior to starting the workshop, it would help to have the following
 in place:
@@ -96,8 +95,7 @@ in place:
 * Have Python installed (recommended versions 2.7, 3.3, or 3.4)
 
 
-Install Package Management Tools
-++++++++++++++++++++++++++++++++
+### Install Package Management Tools
 
 These need to be installed in your Python executable environment,
 whether you're using a pre-installed system Python, or a special
