@@ -246,11 +246,11 @@ caught up with that!
 
 - [ ] [Commit all the things!!!](http://i.stack.imgur.com/BxolD.jpg)
       With helpful comments.
-- [ ] Create a repo on GitHub, BitBucket or similar. One option is to fork
-      [shiny_code_quest](https://github.com/sheilatron/shiny_code_quest)
+- [ ] Create a repo on GitHub, BitBucket or similar.
 - [ ] Add your remote Git repo as a git "remote"
 `git remote add origin <your repo uri>
 - [ ] Push the changes to the repo.
+- [ ] Profit!
 
 
 #### Test Installation
