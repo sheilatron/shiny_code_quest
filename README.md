@@ -307,3 +307,13 @@ https://testpypi.python.org/pypi
 - [ ] Create another virtualenv, and attempt to install from the
       test package server
 
+#### Logging
+
+For subsequent releases, consider adding logging! A few well-placed
+logging statements can provide useful information about what your
+program is doing while running.
+
+Python has a standard logging module:
+
+https://docs.python.org/2/library/logging.html
+code much more usable to developers, by
