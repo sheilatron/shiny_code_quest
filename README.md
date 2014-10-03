@@ -214,6 +214,23 @@ Pick out a code checker such as Flake8 or pylint.
 The easiest code checker to start out with the plain pep8 script.
 
 
+#### Add Dependencies
+
+Bonus Section (not yet on the checklist!):
+
+What if you would like to use a 3rd party package in your source code?
+
+You can add an "install_requires" section to the setup.py, so that
+when your package gets installed, the 3rd party tool will also be
+automatically downloaded from PyPI and installed.
+
+You can also declare what version of the 3rd party package is
+required, or what range of versions.
+
+###### setuptools documentation for Declaring Dependencies
+
+https://pythonhosted.org/setuptools/setuptools.html#declaring-dependencies
+
 #### Setup Sphinx for Documentation
 
 - [ ] Create Sphinx project skeleton using [sphinx-quickstart](http://sphinx-doc.org/tutorial.html#setting-up-the-documentation-sources)
@@ -234,6 +251,7 @@ and "Numpy style" docstrings.
 
 Next: Create Sphinx docs and render them as HTML.
 
+- [ ] Create a 'doc' subfolder to contain your Sphinx docs
 - [ ] Fill in index.rst with some explanatory text.
 - [ ] Create an api_doc.rst, add it to index.rst toctree
 - [ ] Create a narrative.rst, add it to the index.rst toctree
