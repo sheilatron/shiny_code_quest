@@ -49,22 +49,18 @@ Caveat/Disclaimer: This workshop "quest" format is experimental.
 The Quest
 ---------
 
-
 You might not be able to finish this quest during the workshop!
 That's ok...do the best you can, and keep pestering the instructor
 afterwards until you have completed it.
 
-
 To complete the quest, students must achieve the following:
 
-
-- [ ] Download the "shiny_code_quest.tar.gz" blob of messy code
-- [ ] Reorganize it into a standard Python project structure
-- [ ] Convert it into a Git repository and commit initial + changes
+- [ ] Complete the tutorial [How To Package Your Python Code](http://www.scotttorborg.com/python-packaging/) 
+- [ ] Convert the resulting codebase into a Git repository
     - [ ] Configure Git for line endings, author, etc.
     - [ ] Avoid committing useless auto-generated files
-- [ ] Add tests and achieve 100% test coverage
-- [ ] Manually verify working command line scripts
+- [ ] Add additional source & tests
+- [ ] Achieve 100% test coverage
 - [ ] Pass PEP8 checker
 - [ ] Use Sphinx to generate docs from text files and docstrings
 - [ ] Publish source on GitHub, BitBucket, or similar
@@ -87,44 +83,26 @@ Tasks Checklist
 
 #### Prerequisites
 
-Prior to starting the workshop, it would help to have the following
-in place:
-
-* Know at least a little Python programming
-* Have a text editor and be ready to use it
-* Have Python installed (recommended versions 2.7, 3.3, or 3.4)
+This workshop assumes some pre-existing knowledge of Python,
+though not much. It does require editing Python files, being
+comfortable with the command line environment, and being willing
+to explore the web to find relevant documentation.
 
 
-###### Tip for Windows Users
+#### Install Python
 
-Sometimes it's not easy being a Windows user in an open source world.
-To make it a little easier to get by, try out the
-[Chocolatey package manager](https://chocolatey.org/)!
-Chocolatey provides a convenient command line installer for free software
-devoid of bloatware barnacles! While not as extensively stocked as
-Linux-based software repositories, it's a huge improvement over tedious GUI
-install wizards which require you to manually download and run each installer
-individually. For purposes of preparing for this workshop, it can save
-you a lot of time.
+Python comes pre-installed on Linux and Mac, though the versions vary.  The
+recommended Python versions are 2.7, 3.3, or 3.4, though you could probably
+make due with 2.6. If you need to install it, try searching the web!
 
-With Chocolatey, here are some of the things you could install:
+Note: This workshop has not yet been tested with Python 3.x or higher, but it
+should be possible!
 
-```
-choco install python2
-choco install python3
-choco install 7zip
-choco install git
-choco install gitextensions
-choco install GitHub
-choco install notepadplusplus
-choco install SublimeText3
-choco install KickAssVim
-choco install vim
-choco install Emacs
-```
+#### Install Your Favorite Text Editor or IDE
 
-The above are only examples; Windows users should window-shop for packages
-on the (chocolatey repository](https://chocolatey.org/packages)
+If you're just getting started programming, choose something easy
+which you're comfortable working with. If in doubt, search the web for
+suggestions!
 
 
 #### Install Package Management Tools
@@ -156,64 +134,66 @@ Links for Learning virtualenv:
     * [A non-magical introduction to Pip and Virtualenv for Python beginners](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 
 
-#### Create Project Folder
+#### Create Boilerplate Python Project Folder
 
-- [ ] Create a folder somewhere called shiny_code_quest
+- [ ] Create a folder somewhere; call it what you like
 - [ ] Populate the folder with a basic Python project skeleton
+      with a setup.py using setuptools (not distutils!)
 
 At this point you have a number of options: create the project skeleton
 manually, or use a tool, such as tooth.paste which does a lot of the work
 for you.
 
+Hint: Here's a Good Tutorial
+    http://www.scotttorborg.com/python-packaging/everything.html
+
+You could also try out tooth.paste
 http://toothpaste.readthedocs.org/en/latest/
 
-This one could be tricky...don't be afraid to ask for help
-if it fails to install correctly!
-
-Most things from PyPI are pretty easy to install..."pip install whatever".
-But sometimes you may run across something that needs a compiler, or has
-a broken dependency, etc.
-
 See also:
-    Funniest: http://www.scotttorborg.com/python-packaging/everything.html
     https://pythonhosted.org/an_example_pypi_project/index.html
     http://peterdowns.com/posts/first-time-with-pypi.html
     https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/
 
-If you get stuck on this, download the sample skeleton and use that
-instead. TODO
 
-#### Set Up Git
+#### Put Project Folder Under Git Version Control
 
-GitHub has [nice docs for setting up Git](https://help.github.com/articles/set-up-git) on how to set up Git.
+GitHub has [nice docs for setting up Git](https://help.github.com/articles/set-up-git).
 
 - [ ] Install Git for your platform
 - [ ] Configure global Git settings
 - [ ] Make your project folder into a Git repository
-    - [ ] cd into your shiny_code_quest folder
+    - [ ] cd into the project folder
     - [ ] type "git init"
+    - [ ] learn how to add & commit using Git
+    - [ ] commit your files with comments!
 
 
 #### Add Source Code to the Project
 
-- [ ] Download the grubby_grail.tar.gz file TODO add URI
-- [ ] Decompress grubby_grail using "tar -xvf grubby_grail.tar.gz"
-- [ ] Populate the 
+At this point, you can use whatever source code you like, either something
+of your own, or something from a tutorial.
+
+There are some requirements for purposes of this tutorial:
+
+- [ ] There should be a "main" function somewhere
+- [ ] The initial version of the code should be committed in Git
 
 
-#### Make It Run
+
+#### Create & Run Console Script
 
 - [ ] create a console script entry in setup.py to execute
       the script 
 
-```python
+Example setup.py excerpt:
+
+```
 entry_points={
   'console_scripts': [
       'approach_the_keeper = shiny.scripts:approach_the_keeper',
       ]}
 ```
-
-- [ ] run the console script: approach_the_keeper
 
 
 #### Add Tests
@@ -227,12 +207,11 @@ You'll need to make a few more to achieve 100% test coverage.
 - [ ] Add the missing tests
 
 
-#### Improve Coding Style
+#### Check Code: Run Code Checkers
 
-- [ ] install PEP8 code checker
-- [ ] run PEP8 checker
+Pick out a code checker such as Flake8 or pylint.
 
-TODO other code checkers, flake8 etc.
+The easiest code checker to start out with the plain pep8 script.
 
 
 #### Setup Sphinx for Documentation
@@ -245,7 +224,16 @@ TODO other code checkers, flake8 etc.
 
 #### Write Docs
 
-- [ ] Add missing docstrings marked with "TODO"
+Make sure you have docstrings for your modules, classes,
+and functions. The exception would be private methods or functions,
+prefixed with an "_" by convention.
+
+Research the various docstring styles! Pick a style for your
+docstrings and be consistent. Two popular styles are "Google style"
+and "Numpy style" docstrings.
+
+Next: Create Sphinx docs and render them as HTML.
+
 - [ ] Fill in index.rst with some explanatory text.
 - [ ] Create an api_doc.rst, add it to index.rst toctree
 - [ ] Create a narrative.rst, add it to the index.rst toctree
