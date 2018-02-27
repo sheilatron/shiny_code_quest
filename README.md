@@ -113,47 +113,15 @@ Instead, you can research these in a self-directed manner, and ask
 the workshop instructors to provide support when you get stuck.
 
 
-Tasks Checklist
----------------
+Hints
+-----
 
-#### Prerequisites
-
-This workshop assumes some pre-existing knowledge of Python,
-though not much. It does require editing Python files, being
-comfortable with the command line environment, and being willing
-to explore the web to find relevant documentation.
-
-
-#### Install Python
-
-Python comes pre-installed on Linux and Mac, though the versions vary.  The
-recommended Python versions are 2.7, 3.3, or 3.4, though you could probably
-make due with 2.6. If you need to install it, try searching the web!
-
-Note: This workshop has not yet been tested with Python 3.x or higher, but it
-should be possible!
 
 #### Install Your Favorite Text Editor or IDE
 
 If you're just getting started programming, choose something easy
 which you're comfortable working with. If in doubt, search the web for
 suggestions!
-
-
-#### Install Package Management Tools
-
-These need to be installed in your Python executable environment,
-whether you're using a pre-installed system Python, or a special
-Python you installed yourself.
-
-Here's a nice set of ["all in one instructions"](https://packaging.python.org/en/latest/tutorial.html#installing-the-tools) on the official Python Packaging Authority website, to help you install all of the following:
-
-- [ ] Install [setuptools](https://packaging.python.org/en/latest/projects.html#setuptools)
-- [ ] Install [pip](http://pip.readthedocs.org/en/latest/installing.html)
-- [ ] Install [twine](https://packaging.python.org/en/latest/projects.html#twine)
-- [ ] Install virtualenv (only needed if Python < 3.3)
-      Python 3.3 includes venv which can be used instead
-- [ ] Install wheel
 
 
 #### Set Up Python Sandbox Using Virtualenv
@@ -167,28 +135,6 @@ Links for Learning virtualenv:
     * [Official virtualenv docs](http://virtualenv.readthedocs.org/en/latest/virtualenv.html)
     * [Hitchhiker's Guide to Virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) 
     * [A non-magical introduction to Pip and Virtualenv for Python beginners](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
-
-
-#### Create Boilerplate Python Project Folder
-
-- [ ] Create a folder somewhere; call it what you like
-- [ ] Populate the folder with a basic Python project skeleton
-      with a setup.py using setuptools (not distutils!)
-
-At this point you have a number of options: create the project skeleton
-manually, or use a tool, such as tooth.paste which does a lot of the work
-for you.
-
-Hint: Here's a Good Tutorial
-    http://www.scotttorborg.com/python-packaging/everything.html
-
-You could also try out tooth.paste
-http://toothpaste.readthedocs.org/en/latest/
-
-See also:
-    https://pythonhosted.org/an_example_pypi_project/index.html
-    http://peterdowns.com/posts/first-time-with-pypi.html
-    https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/
 
 
 #### Put Project Folder Under Git Version Control
@@ -246,7 +192,7 @@ You'll need to make a few more to achieve 100% test coverage.
 
 Pick out a code checker such as Flake8 or pylint.
 
-The easiest code checker to start out with the plain pep8 script.
+The easiest code checker to start out with is the pep8 script.
 
 
 #### Add Dependencies
