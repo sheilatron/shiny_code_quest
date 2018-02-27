@@ -1,7 +1,21 @@
-Tools & Tests: A Python Quest
-=============================
+Python Tools & Practices Workshop
+=================================
 
-A Half-Day (hopefully!) Workshop for Python Beginner to Intermediate Level
+This informal beginning/intermediate workshop helps to fill the gap between
+learning the Python language, and using Python in a real world setting. That
+includes a social context of collaboration with other developers, and
+participation in the Python ecosystem.
+
+The format is an informal "web quest" workshop, intended for Python user
+group meetings and self-directed study with the help of a mentor. This
+format requires less preparation on the part of teachers and mentors,
+and encourages an emphasis on support and collaboration with peers.
+See the About This Workshop section for more information about the format.
+
+This workshop assumes at least some level of Python coding experience,
+and a comfort level with text editors and command line tools.
+
+Presentation link: https://docs.google.com/presentation/d/1kt5j0zq87HqiqpI_6S93Hf_PCtXYwfPoV7TylisDqfs/edit?usp=sharing
 
 
 Is This For Me?
@@ -10,40 +24,45 @@ Is This For Me?
 You've gone through a few Python tutorials, maybe a book or two...
 maybe you've written some code. What next?
 
-You might want to think about:
+Here are some topics covered in the workshop:
 
-* Leveraging 3rd party Python libraries from the vast PyPI "Cheeseshop"
+* Installing Python 3, if your system still has Python 2
+    - Options will be discussed, based on the operating system of participants
+* Leveraging 3rd party Python libraries and tools from the vast PyPI "Cheeseshop"
     - Without cluttering up your "system Python" environment
+    - Allowing multiple projects with different Python libraries installed
+    - Tools: pip and venv (or virtualenv, for Python 2.x)
+    - Fancier tools: virtualenvwrapper, pipenv, vex
 * Putting your code under version control
     - Versus manually backing up versions of source code files
-* Putting your code up on Github where it can be reviewed and possibly
-  improved by others ("social coding")...and safely backed up.
+    - Tools: Git
+* Document your code
+    - Use docstrings to describe the usage of modules, classes, functions
+    - Use comments to clarify difficult to understand pieces of code
+    - Render HTML pages from docstrings and markup files
+    - Tools: Sphinx and ReadTheDocs
 * Write automated tests to provide quick feedback about whether
   your code does what you expect
-* Publish your code as a 3rd party library in a way that is convenient
-  for others to install.
-    - with documentation!
-    - with metadata! (keywords, author, declared dependencies, etc.)
+    - Tools: unittest and py.test
+* Share your code where it can be reviewed and possibly
+  improved by others ("social coding")...and safely backed up.
+    - Tools: GitHub, GitLab, BitBucket
+* Publish your code as a Python 'distribution', such that it is
+    - discoverable and has metadata (keywords, author, declared dependencies, etc.)
+    - installable
+    - documented
+    - usable as a tool or library
+    - Tools: PyPI and PyPI Test
 * Polish your code with checkers to help you achieve a consistent
   and readable coding style, clean out useless bits, code duplication, common
   antipatterns, meet Python community standards (PEP8), etc.  To understand why
   this matters, try Googling "benefits of having a coding style"
 
-Maybe you already know this stuff, but could benefit from filling in a few gaps
-in your knowledge. The parts you already know won't take much time to
-complete, and you can get help to speed your learning on the parts you don't know.
-
-This workshop hits a lot of high points, without going deeply into one area,
+This workshop covers those points, without going deeply into one area,
 enabling students to become familiar with an end-to-end toolchain. More
 importantly, students will have overcome obstacles in understanding and
 using the various tool, thus gaining confidence and ability to apply the
 tools to their own projects.
-
-Caveat/Disclaimer: This workshop "quest" format is experimental.
-                   PyTexas 2014 is the first iterations. The instructor
-                   requests your assistance in making this a successful
-                   learning experience for all participants, present
-                   and future.
 
 
 The Quest
@@ -55,27 +74,43 @@ afterwards until you have completed it.
 
 To complete the quest, students must achieve the following:
 
-- [ ] Complete the tutorial [How To Package Your Python Code](http://www.scotttorborg.com/python-packaging/) 
+- [ ] Install Python3
+- [ ] Complete the tutorial [How To Package Your Python Code](http://python-packaging.readthedocs.io/en/latest/)...or, to save time, just use the [Python Cookiecutter](https://github.com/audreyr/cookiecutter-pypackage) to create your project!
 - [ ] Convert the resulting codebase into a Git repository
     - [ ] Configure Git for line endings, author, etc.
     - [ ] Avoid committing useless auto-generated files
-- [ ] Add additional source & tests
-- [ ] Achieve 100% test coverage
-- [ ] Pass PEP8 checker
-- [ ] Use Sphinx to generate docs from text files and docstrings
+    - [ ] Commit the source code locally
+- [ ] Add some custom code to your project
+- [ ] Run the Flake8 checker to see where your code needs improvement
+- [ ] Create a test, and use py.test to run the tests
+- [ ] Measure test coverage to see where you are missing tests
+- [ ] Create a command line 'console script' to execute your source code
+- [ ] Add a command line parameter to your console script
+- [ ] Try out pdb; set a check point in your code, and run to see what happens.
+- [ ] Configure Python logging, and add at least one log statement to code
 - [ ] Publish source on GitHub, BitBucket, or similar
-- [ ] Build installable distribution with appropriate metadata
+- [ ] Build an installable distribution with appropriate metadata
 - [ ] Clone and test in a local virtualenv
 - [ ] Publish on the PyPI test site
 - [ ] Install from the PyPI test site into a local virtualenv
+- [ ] Use bumpversion to increase the version, and re-publish to PyPI test site
+- [ ] Use Sphinx to generate docs from text files and docstrings
 
-Does this seem like a lot to figure out? Quests aren't supposed to be easy! But
-you'll have help when you need it from teachers and other students.
 
-Instead of spelling out detailed instructions, this quest will provide pointers
-on the way to help you figure out the solution using various documentation
-links on the web.
+Bonus Quest
+-----------
 
+Finally, if you feel that your project really is ready ship, you can
+take it further with the following:
+
+- [ ] Publish docs on ReadTheDocs
+- [ ] Set up Travis CI for continuous integration testing
+- [ ] Setup pyup.io for automatic updates
+- [ ] Release on the real PyPI
+
+As you can see, this webquest does not spell out detailed instructions.
+Instead, you can research these in a self-directed manner, and ask
+the workshop instructors to provide support when you get stuck.
 
 
 Tasks Checklist
@@ -317,3 +352,17 @@ Python has a standard logging module:
 
 https://docs.python.org/2/library/logging.html
 code much more usable to developers, by
+
+
+About This Workshop
+-------------------
+
+The use of the "webquest" format was inspired in part by the PyTexas
+"teach-ins" which paired beginners with experienced Python developers. The
+teach-ins received positive reviews from those who needed help on specific
+issues, but were less successful for students showing up having no particular
+direction.
+
+For PyTexas 2014, the webquest format was used for a half day tutorial, with a
+group of students who made it fairly far into the list of tasks.
+
