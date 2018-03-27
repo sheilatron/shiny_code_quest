@@ -75,7 +75,11 @@ afterwards until you have completed it.
 To complete the quest, students must achieve the following:
 
 - [ ] Install Python3
-- [ ] Complete the tutorial [How To Package Your Python Code](http://python-packaging.readthedocs.io/en/latest/)...or, to save time, just use the [Python Cookiecutter](https://github.com/audreyr/cookiecutter-pypackage) to create your project!
+- [ ] Think of a project name
+- [ ] Complete the tutorial  [Python Cookiecutter](https://github.com/audreyr/cookiecutter-pypackage) to create your project skeleton!
+    - You can use venv instead of virtualenv mentioned in tutorial
+    - Spend some time looking at the files and directory created
+    - See [How To Package Your Python Code](http://python-packaging.readthedocs.io/en/latest/) for more detailed tutorial explaining the files in a Python module distribution
 - [ ] Convert the resulting codebase into a Git repository
     - [ ] Configure Git for line endings, author, etc.
     - [ ] Avoid committing useless auto-generated files
@@ -83,6 +87,7 @@ To complete the quest, students must achieve the following:
 - [ ] Add some custom code to your project
 - [ ] Run the Flake8 checker to see where your code needs improvement
 - [ ] Create a test, and use py.test to run the tests
+    - Cookiecutter probably already created one test; make one for your custom code.
 - [ ] Measure test coverage to see where you are missing tests
 - [ ] Create a command line 'console script' to execute your source code
 - [ ] Add a command line parameter to your console script
