@@ -15,8 +15,9 @@ See the About This Workshop section for more information about the format.
 This workshop assumes at least some level of Python coding experience,
 and a comfort level with text editors and command line tools.
 
-Presentation link: https://docs.google.com/presentation/d/1kt5j0zq87HqiqpI_6S93Hf_PCtXYwfPoV7TylisDqfs/edit?usp=sharing
+Presentation link: 
 
+https://docs.google.com/presentation/d/1CUa_ATiYjP5aOquWr2mJBd2HDpqF-LBDEI_qbcw6Fjc/edit?usp=sharing
 
 Is This For Me?
 ---------------
